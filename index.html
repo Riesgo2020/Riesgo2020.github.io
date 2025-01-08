@@ -11,33 +11,35 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
+
+        /* Contenedor principal con el color de fondo */
         .content {
-            position: relative;
-            height: 300px;
             background-color: #4A90E2;
-            text-align: center;
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            padding: 20px 0;
         }
-        h4, h2, h3 {
+
+        h4 {
             margin: 0;
+            font-size: 1.2em; /* Tamaño más pequeño */
             animation: fadeInUp 1s ease-out;
         }
+
         h2 {
+            margin: 0;
             font-size: 2.8em;
+            font-weight: bold; /* Negrita */
             margin-bottom: 10px;
+            animation: fadeInUp 1s ease-out;
         }
+
         h3 {
-            font-size: 2em;
+            margin: 0;
+            font-size: 1.8em; /* Tamaño mediano */
             margin-top: 10px;
             margin-bottom: 30px;
-        }
-        h4 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
         }
 
         /* Estilo dinámico para las letras */
@@ -52,21 +54,31 @@
             }
         }
 
-        /* Estilos del cuadro dinámico */
+        /* Efecto de ola */
+        svg {
+            width: 100%;
+            display: block;
+            position: relative;
+            top: -20px;
+        }
+
+        /* Cuadro dinámico */
         .dynamic-box {
-            margin: 20px auto;
+            margin: 40px auto;
             padding: 40px;
             max-width: 600px;
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
             text-align: center;
+            transition: all 0.3s ease;
         }
+
         .dynamic-box:hover {
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px);
         }
+
         .dynamic-box img {
             width: 100%;
             border-radius: 10px;
@@ -74,7 +86,7 @@
             cursor: pointer;
         }
 
-        /* Estilos del botón */
+        /* Estilo del botón */
         .download-button {
             display: inline-block;
             padding: 20px 40px;
@@ -89,6 +101,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
+
         .download-button:hover {
             background-color: #218838;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -108,6 +121,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             animation: fadeInScale 0.5s ease-in-out;
         }
+
         .thank-you-message.show {
             display: block;
         }
@@ -124,12 +138,7 @@
             }
         }
 
-        /* Mejoras de accesibilidad */
-        .dynamic-box img {
-            alt: "Imagen representativa de la información";
-        }
-
-        /* Efecto de ola */
+        /* Estilos responsivos */
         @media (max-width: 600px) {
             h2 {
                 font-size: 2em;
@@ -138,32 +147,15 @@
                 font-size: 1.2em;
                 padding: 15px 30px;
             }
+            .dynamic-box {
+                padding: 20px;
+                width: 90%;
+            }
         }
 
-        /* Estilos para el preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .preloader img {
-            width: 100px;
-        }
     </style>
 </head>
 <body>
-
-    <!-- Preloader -->
-    <div id="preloader" class="preloader">
-        <img src="assets/loader.gif" alt="Cargando...">
-    </div>
 
     <!-- Contenido principal con los encabezados -->
     <div class="content">
@@ -173,7 +165,7 @@
     </div>
 
     <!-- Efecto de ola -->
-    <svg viewBox="0 0 1440 320" style="position: relative; top: -20px;" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4A90E2" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,122.7C384,149,480,235,576,250.7C672,267,768,213,864,202.7C960,192,1056,224,1152,245.3C1248,267,1344,277,1392,282.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
     </svg>
 
@@ -209,11 +201,6 @@
             const message = document.getElementById('thank-you-message');
             message.classList.add('show');
         }
-
-        // Ocultar preloader cuando todo esté cargado
-        window.onload = function() {
-            document.getElementById("preloader").style.display = "none";
-        };
     </script>
 </body>
 </html>
