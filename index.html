@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efecto de Ola con Cuadro Dinámico y Botón</title>
+    <title>Banco del Tesoro, C.A. Banco Universal</title>
     <style>
         /* Estilos generales */
         body {
@@ -23,22 +23,35 @@
         }
         h4, h2, h3 {
             margin: 0;
+            animation: fadeInUp 1s ease-out; /* Animación para letras */
         }
         h2 {
             font-size: 2.5em;
-            margin-bottom: 15px; /* Separación mayor entre los textos */
+            margin-bottom: 10px; /* Separación mayor entre los textos */
         }
         h3 {
             font-size: 1.8em;
-            margin-bottom: 15px; /* Separación mayor entre los textos */
+            margin-top: 10px; /* Más espacio entre los encabezados */
+            margin-bottom: 30px; /* Separación mayor para "GGAIR / GRO" */
         }
         h4 {
             font-size: 1.2em;
-            margin-bottom: 20px; /* Separación mayor entre los textos */
+            margin-bottom: 20px;
+        }
+        /* Estilo dinámico para las letras */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         /* Estilos del cuadro dinámico */
         .dynamic-box {
-            margin: 30px auto; /* Subido */
+            margin: 20px auto; /* Subido */
             padding: 40px;
             max-width: 600px;
             background-color: #ffffff;
@@ -62,7 +75,7 @@
             display: inline-block;
             padding: 15px 30px;
             margin-top: 15px; /* Subido */
-            background-color: #4A90E2;
+            background-color: #4A90E2; /* Botón verde */
             color: white;
             font-size: 1.2em;
             border-radius: 25px;
@@ -73,7 +86,7 @@
             cursor: pointer;
         }
         .download-button:hover {
-            background-color: #357ABD;
+            background-color: #218838;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(-3px);
         }
@@ -82,7 +95,7 @@
             display: none;
             margin-top: 30px;
             padding: 25px;
-            background-color: #4A90E2;
+            background-color: #28a745;
             color: white;
             font-size: 1.2em;
             border-radius: 10px;
@@ -104,13 +117,31 @@
                 transform: scale(1);
             }
         }
+        /* Estilos para imágenes decorativas */
+        .decorative-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+        .decorative-icon.left {
+            top: 10px;
+            left: 10px;
+        }
+        .decorative-icon.right {
+            top: 10px;
+            right: 10px;
+        }
     </style>
 </head>
 <body>
+
     <div class="content">
         <!-- Contenido principal con los encabezados -->
+        <p></p>
         <h4>Banco del Tesoro, C.A. Banco Universal</h4>
+        <p></p>
         <h2><strong>3er Seminario en Materia de Riesgo</strong></h2>
+        <p></p>
         <h3>GGAIR / GRO</h3>
     </div>
 
@@ -140,7 +171,7 @@
         // Función para descargar el archivo PPTX
         function downloadFile() {
             const link = document.createElement('a');
-            link.href = 'https://riesgo2020.github.io/assets/Curso.pptx'; // Ruta del archivo en tu repositorio
+            link.href = './assets/Curso.pptx'; // Ruta del archivo en tu repositorio
             link.download = 'Curso.pptx';
             link.click();
             showThankYouMessage();
