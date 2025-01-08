@@ -16,54 +16,52 @@
             background-color: #4A90E2;
             text-align: center;
             color: white;
-            padding-top: 80px; /* Mover las letras más abajo */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrar verticalmente */
+            align-items: center; /* Centrar horizontalmente */
         }
         h4, h2, h3 {
             margin: 0;
         }
         h2 {
             font-size: 2.5em;
+            margin-bottom: 15px; /* Separación mayor entre los textos */
         }
         h3 {
             font-size: 1.8em;
+            margin-bottom: 15px; /* Separación mayor entre los textos */
         }
         h4 {
             font-size: 1.2em;
+            margin-bottom: 20px; /* Separación mayor entre los textos */
         }
         /* Estilos del cuadro dinámico */
         .dynamic-box {
-            margin: 50px auto;
-            padding: 40px; /* Aumentar el tamaño del cuadro */
-            max-width: 600px; /* Aumentar el tamaño del cuadro */
+            margin: 30px auto; /* Subido */
+            padding: 40px;
+            max-width: 600px;
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease; /* Efecto de transición */
+            transition: all 0.3s ease;
             text-align: center;
         }
         .dynamic-box:hover {
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px);
         }
-        .dynamic-box h4 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .dynamic-box p {
-            font-size: 1.1em;
-            color: #555;
-        }
         .dynamic-box img {
             width: 100%;
             border-radius: 10px;
             margin-top: 20px;
+            cursor: pointer;
         }
         /* Estilos del botón */
         .download-button {
             display: inline-block;
             padding: 15px 30px;
-            margin-top: 30px;
+            margin-top: 15px; /* Subido */
             background-color: #4A90E2;
             color: white;
             font-size: 1.2em;
@@ -72,6 +70,7 @@
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         .download-button:hover {
             background-color: #357ABD;
@@ -82,13 +81,28 @@
         .thank-you-message {
             display: none;
             margin-top: 30px;
-            padding: 20px;
-            background-color: #28a745;
+            padding: 25px;
+            background-color: #4A90E2;
             color: white;
             font-size: 1.2em;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInScale 0.5s ease-in-out; /* Animación más atractiva */
+        }
+        .thank-you-message.show {
+            display: block;
+        }
+        /* Animación de entrada */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -100,7 +114,7 @@
         <h3>GGAIR / GRO</h3>
     </div>
 
-    <!-- Efecto de ola subido -->
+    <!-- Efecto de ola -->
     <svg viewBox="0 0 1440 320" style="position: relative; top: -20px;" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4A90E2" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,122.7C384,149,480,235,576,250.7C672,267,768,213,864,202.7C960,192,1056,224,1152,245.3C1248,267,1344,277,1392,282.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
     </svg>
@@ -109,14 +123,12 @@
     <div class="dynamic-box">
         <h4>Contenido del Cuadro Dinámico</h4>
         <p>Este es un cuadro con fondo blanco, sombras y un efecto amigable que cambia cuando pasas el mouse sobre él. Puedes usarlo para mostrar información adicional de una manera atractiva.</p>
-        <img src="https://via.placeholder.com/600x300" alt="Imagen de ejemplo">
+        <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen de ejemplo" onclick="downloadFile()">
     </div>
 
     <!-- Botón de descarga -->
     <div style="text-align: center;">
-        <a href="path/to/your-file.pptx" class="download-button" download onclick="showThankYouMessage()">
-            Abrir
-        </a>
+        <a class="download-button" onclick="downloadFile()">Abrir</a>
     </div>
 
     <!-- Mensaje de agradecimiento -->
@@ -125,11 +137,20 @@
     </div>
 
     <script>
+        // Función para descargar el archivo PPTX
+        function downloadFile() {
+            const link = document.createElement('a');
+            link.href = 'https://riesgo2020.github.io/assets/Curso.pptx'; // Ruta del archivo en tu repositorio
+            link.download = 'Curso.pptx';
+            link.click();
+            showThankYouMessage();
+        }
+
         // Función para mostrar el mensaje de agradecimiento
         function showThankYouMessage() {
-            document.getElementById('thank-you-message').style.display = 'block';
+            const message = document.getElementById('thank-you-message');
+            message.classList.add('show');
         }
     </script>
-
 </body>
 </html>
