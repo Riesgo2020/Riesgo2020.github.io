@@ -10,6 +10,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            line-height: 1.6; /* Interlineado */
         }
 
         /* Contenedor principal con el color de fondo */
@@ -64,9 +65,9 @@
 
         /* Cuadro dinámico */
         .dynamic-box {
-            margin: 40px auto;
-            padding: 40px;
-            max-width: 600px;
+            margin: -40px auto 10px auto; /* Subir el cuadro más arriba */
+            padding: 30px;
+            max-width: 450px; /* Cuadro más pequeño */
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -90,7 +91,7 @@
         .download-button {
             display: inline-block;
             padding: 20px 40px;
-            margin-top: 20px;
+            margin-top: 10px; /* Ajustar la distancia */
             background-color: #4A90E2;
             color: white;
             font-size: 1.5em;
@@ -171,8 +172,6 @@
 
     <!-- Cuadro dinámico -->
     <div class="dynamic-box">
-        <h4>Contenido del Cuadro Dinámico</h4>
-        <p>Este es un cuadro con fondo blanco, sombras y un efecto amigable que cambia cuando pasas el mouse sobre él. Puedes usarlo para mostrar información adicional de una manera atractiva.</p>
         <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen representativa de la información" onclick="downloadFile()">
     </div>
 
@@ -204,3 +203,4 @@
     </script>
 </body>
 </html>
+
