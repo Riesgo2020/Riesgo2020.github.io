@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3er Seminario en Materia de Riesgo</title>
     <style>
+        /* Estilo general del body */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,15 +13,25 @@
             text-align: center;
             background-color: #f4f4f4;
         }
+
+        /* Estilo del encabezado */
         .header {
+            position: relative; /* Posiciona el contenedor para incluir las olas */
             background-color: #003399;
             color: white;
             padding: 20px 10px;
+            overflow: hidden; /* Oculta las partes del SVG que sobresalgan */
         }
-        .header h1 {
+
+        .header h1, .header h2, .header h3 {
             margin: 0;
+        }
+
+        .header h1 {
             font-size: 24px;
         }
+
+        /* Contenedor principal */
         .container {
             margin: 20px;
             background-color: white;
@@ -28,10 +39,14 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Estilo de la imagen */
         .container img {
             max-width: 100%;
             border-radius: 10px;
         }
+
+        /* Estilo del botón */
         .button {
             display: inline-block;
             margin-top: 20px;
@@ -42,17 +57,36 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
         .button:hover {
             background-color: #555;
+        }
+
+        /* Estilo del SVG para las olas */
+        .wave {
+            position: absolute;
+            bottom: 0; /* Anclado al fondo del encabezado */
+            left: 0;
+            width: 100%;
+            height: 100px; /* Altura del SVG */
         }
     </style>
 </head>
 <body>
+    <!-- Encabezado con olas -->
     <div class="header">
         <h1>Banco del Tesoro, C.A. Banco Universal</h1>
         <h2>3er Seminario en Materia de Riesgo</h2>
         <h3>GGAIR / GRO</h3>
+        <!-- SVG de las olas -->
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#f4f4f4" fill-opacity="1" 
+                  d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,85.3C960,85,1056,107,1152,117.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
     </div>
+
+    <!-- Contenido principal -->
     <div class="container">
         <img src="assets/seminario.png" alt="3er Seminario en Materia de Riesgo">
         <a href="#" class="button">Abrir</a>
