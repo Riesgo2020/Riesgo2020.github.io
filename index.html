@@ -9,6 +9,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
         .content {
             position: relative;
@@ -18,26 +19,27 @@
             color: white;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centrar verticalmente */
-            align-items: center; /* Centrar horizontalmente */
+            justify-content: center;
+            align-items: center;
         }
         h4, h2, h3 {
             margin: 0;
-            animation: fadeInUp 1s ease-out; /* Animación para letras */
+            animation: fadeInUp 1s ease-out;
         }
         h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px; /* Separación mayor entre los textos */
+            font-size: 2.8em;
+            margin-bottom: 10px;
         }
         h3 {
-            font-size: 1.8em;
-            margin-top: 10px; /* Más espacio entre los encabezados */
-            margin-bottom: 30px; /* Separación mayor para "GGAIR / GRO" */
+            font-size: 2em;
+            margin-top: 10px;
+            margin-bottom: 30px;
         }
         h4 {
-            font-size: 1.2em;
+            font-size: 1.4em;
             margin-bottom: 20px;
         }
+
         /* Estilo dinámico para las letras */
         @keyframes fadeInUp {
             from {
@@ -49,22 +51,21 @@
                 transform: translateY(0);
             }
         }
+
         /* Estilos del cuadro dinámico */
         .dynamic-box {
-            margin: 20px auto; /* Subido */
+            margin: 20px auto;
             padding: 40px;
             max-width: 600px;
-            width: 90%; /* Asegura que el cuadro sea responsivo */
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             text-align: center;
-            transform: translateY(0); /* Inicia en su posición normal */
         }
         .dynamic-box:hover {
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-10px); /* Desplazamiento hacia arriba cuando el mouse pasa */
+            transform: translateY(-5px);
         }
         .dynamic-box img {
             width: 100%;
@@ -72,18 +73,15 @@
             margin-top: 20px;
             cursor: pointer;
         }
-        /* Animación de texto para los párrafos dentro del cuadro */
-        .dynamic-box p {
-            animation: fadeInUp 1s ease-out;
-        }
+
         /* Estilos del botón */
         .download-button {
             display: inline-block;
-            padding: 15px 30px;
-            margin-top: 15px; /* Subido */
-            background-color: #4A90E2; /* Botón verde */
+            padding: 20px 40px;
+            margin-top: 20px;
+            background-color: #4A90E2;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.5em;
             border-radius: 25px;
             text-decoration: none;
             text-align: center;
@@ -96,6 +94,7 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(-3px);
         }
+
         /* Estilos del mensaje de agradecimiento */
         .thank-you-message {
             display: none;
@@ -107,11 +106,12 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeInScale 0.5s ease-in-out; /* Animación más atractiva */
+            animation: fadeInScale 0.5s ease-in-out;
         }
         .thank-you-message.show {
             display: block;
         }
+
         /* Animación de entrada */
         @keyframes fadeInScale {
             from {
@@ -123,71 +123,52 @@
                 transform: scale(1);
             }
         }
-        /* Estilos para imágenes decorativas */
-        .decorative-icon {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-        }
-        .decorative-icon.left {
-            top: 10px;
-            left: 10px;
-        }
-        .decorative-icon.right {
-            top: 10px;
-            right: 10px;
+
+        /* Mejoras de accesibilidad */
+        .dynamic-box img {
+            alt: "Imagen representativa de la información";
         }
 
-        /* Responsividad para dispositivos móviles */
-        @media (max-width: 768px) {
+        /* Efecto de ola */
+        @media (max-width: 600px) {
             h2 {
                 font-size: 2em;
             }
-            h3 {
-                font-size: 1.4em;
-            }
-            h4 {
-                font-size: 1em;
-            }
-            .dynamic-box {
-                padding: 20px;
-                width: 90%; /* Asegura que el cuadro no ocupe toda la pantalla en móviles */
-                margin: 10px;
-            }
             .download-button {
-                padding: 12px 25px;
-                font-size: 1em;
+                font-size: 1.2em;
+                padding: 15px 30px;
             }
         }
 
-        @media (max-width: 480px) {
-            h2 {
-                font-size: 1.8em;
-            }
-            h3 {
-                font-size: 1.2em;
-            }
-            .dynamic-box {
-                padding: 15px;
-                width: 95%;
-                margin: 10px auto;
-            }
-            .download-button {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
+        /* Estilos para el preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .preloader img {
+            width: 100px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <img src="assets/loader.gif" alt="Cargando...">
+    </div>
+
+    <!-- Contenido principal con los encabezados -->
     <div class="content">
-        <!-- Contenido principal con los encabezados -->
-        <p></p>
         <h4>Banco del Tesoro, C.A. Banco Universal</h4>
-        <p></p>
         <h2><strong>3er Seminario en Materia de Riesgo</strong></h2>
-        <p></p>
         <h3>GGAIR / GRO</h3>
     </div>
 
@@ -199,12 +180,12 @@
     <!-- Cuadro dinámico -->
     <div class="dynamic-box">
         <h4>Contenido del Cuadro Dinámico</h4>
-        <p> Texto prueba</p>
-        <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen de ejemplo" onclick="downloadFile()">
+        <p>Este es un cuadro con fondo blanco, sombras y un efecto amigable que cambia cuando pasas el mouse sobre él. Puedes usarlo para mostrar información adicional de una manera atractiva.</p>
+        <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen representativa de la información" onclick="downloadFile()">
     </div>
 
     <!-- Botón de descarga -->
-    <div style="text-align: center;">
+    <div style="text-align: center; margin-bottom: 30px;">
         <a class="download-button" onclick="downloadFile()">Abrir</a>
     </div>
 
@@ -228,6 +209,11 @@
             const message = document.getElementById('thank-you-message');
             message.classList.add('show');
         }
+
+        // Ocultar preloader cuando todo esté cargado
+        window.onload = function() {
+            document.getElementById("preloader").style.display = "none";
+        };
     </script>
 </body>
 </html>
