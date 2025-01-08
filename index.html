@@ -59,16 +59,21 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             text-align: center;
+            transform: translateY(0); /* Inicia en su posición normal */
         }
         .dynamic-box:hover {
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
+            transform: translateY(-10px); /* Desplazamiento hacia arriba cuando el mouse pasa */
         }
         .dynamic-box img {
             width: 100%;
             border-radius: 10px;
             margin-top: 20px;
             cursor: pointer;
+        }
+        /* Animación de texto para los párrafos dentro del cuadro */
+        .dynamic-box p {
+            animation: fadeInUp 1s ease-out;
         }
         /* Estilos del botón */
         .download-button {
