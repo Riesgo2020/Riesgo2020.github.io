@@ -35,9 +35,15 @@
             animation: fadeInUp 1s ease-out;
         }
 
+        /* División del título en dos líneas */
+        h2 span {
+            display: block;
+        }
+
         h3 {
             margin: 0;
-            font-size: 1.8em; /* Tamaño mediano */
+            font-size: 1.6em; /* Tamaño más fino */
+            font-weight: normal;
             margin-top: 10px;
             margin-bottom: 30px;
             animation: fadeInUp 1s ease-out;
@@ -61,18 +67,20 @@
             display: block;
             position: relative;
             top: -20px;
+            z-index: 0; /* Colocar ola atrás */
         }
 
         /* Cuadro dinámico */
         .dynamic-box {
             margin: -40px auto 10px auto; /* Subir el cuadro más arriba */
-            padding: 30px;
-            max-width: 450px; /* Cuadro más pequeño */
+            padding: 25px;
+            max-width: 400px; /* Cuadro más pequeño */
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: all 0.3s ease;
+            z-index: 1; /* Colocar cuadro al frente */
         }
 
         .dynamic-box:hover {
@@ -101,6 +109,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            z-index: 1; /* Colocar botón al frente */
         }
 
         .download-button:hover {
@@ -161,7 +170,7 @@
     <!-- Contenido principal con los encabezados -->
     <div class="content">
         <h4>Banco del Tesoro, C.A. Banco Universal</h4>
-        <h2><strong>3er Seminario en Materia de Riesgo</strong></h2>
+        <h2><span>3er Seminario en</span> <span>Materia de Riesgo</span></h2>
         <h3>GGAIR / GRO</h3>
     </div>
 
@@ -203,4 +212,3 @@
     </script>
 </body>
 </html>
-
