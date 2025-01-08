@@ -31,32 +31,129 @@
         .container img {
             max-width: 100%;
             border-radius: 10px;
+            cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+            transition: transform 0.3s ease; /* Efecto de transición */
+        }
+        .container img:hover {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen */
         }
         .button {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #003399;
-            color: #fff;
+            color: #ffffffc4;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
         }
         .button:hover {
-            background-color: #555;
+            background-color: #001f5e;
         }
+
+        /* Estilos para el mensaje dinámico */
+        #thankYouMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #003399;
+            color: white;
+            font-size: 22px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: showMessage 1.5s forwards;
+        }
+
+        /* Animación para mostrar el mensaje */
+        @keyframes showMessage {
+            0% {
+                transform: translate(-50%, -60%);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        /* Animación de cierre */
+        @keyframes hideMessage {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+        }
+
+        /* Estilos para el botón de cierre */
+        .closeMessage {
+            background-color: #ff5c5c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .closeMessage:hover {
+            background-color: #e40000;
+        }
+
     </style>
+    <script>
+        // Función para mostrar el mensaje con animación
+        function showThankYouMessage() {
+            var message = document.getElementById('thankYouMessage');
+            message.style.display = 'block';
+            
+            // Ocultar el mensaje después de 4 segundos con una animación de salida
+            setTimeout(function() {
+                message.style.animation = 'hideMessage 1s forwards';
+                setTimeout(function() {
+                    message.style.display = 'none';
+                }, 1000); // Espera el tiempo de la animación
+            }, 4000); // El mensaje se oculta después de 4 segundos
+        }
+
+        // Función para cerrar el mensaje manualmente
+        function closeMessage() {
+            var message = document.getElementById('thankYouMessage');
+            message.style.animation = 'hideMessage 1s forwards';
+            setTimeout(function() {
+                message.style.display = 'none';
+            }, 1000); // Espera el tiempo de la animación
+        }
+    </script>
 </head>
 
 <body>
     <div class="header">
         <h4>Banco del Tesoro, C.A. Banco Universal</h4>
-        <h2>3er Seminario en Materia de Riesgo</h2>
+        <h2><strong>3er Seminario en Materia de Riesgo</strong></h2>
         <h3>GGAIR / GRO</h3>
     </div>
     <div class="container">
-        <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="3er Seminario en Materia de Riesgo">
-        <a href="assets/Curso.pptx" class="button" download="Seminario Riesgo">Abrir</a>
+        <!-- Envolvemos la imagen en un enlace de descarga -->
+        <a href="assets/Curso.pptx" download="Seminario Riesgo" onclick="showThankYouMessage()">
+            <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="3er Seminario en Materia de Riesgo">
+        </a>
+        <a href="assets/Curso.pptx" class="button" download="Seminario Riesgo" onclick="showThankYouMessage()">Abrir</a>
+    </div>
+
+    <!-- Mensaje dinámico centrado con opción de cierre -->
+    <div id="thankYouMessage">
+        Gracias por participar en nuestro Seminario
+        <div class="closeMessage" onclick="closeMessage()">Cerrar</div>
     </div>
 </body>
 </html>
