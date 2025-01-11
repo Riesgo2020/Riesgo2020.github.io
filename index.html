@@ -17,8 +17,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0f2027;
-            background-image: linear-gradient(315deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-color: #0e1a2b;
+            background-image: linear-gradient(120deg, #0e1a2b 0%, #1e3c72 50%, #2a5298 100%);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -35,7 +35,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
             text-align: center;
             width: 90%;
-            max-width: 700px;
+            max-width: 750px;
             animation: fadeInUp 1s ease-in-out;
         }
 
@@ -53,10 +53,10 @@
 
         /* Título principal */
         h1 {
-            font-size: 1.1em;
+            font-size: 2.8em;
             font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #1e90ff, #00bfff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -71,56 +71,39 @@
         /* Imagen con efecto hover */
         .image-box {
             width: 100%;
-            height: 300px;
+            height: 320px;
             background-image: url('https://riesgo2020.github.io/assets/Portada.jpg');
             background-size: cover;
             background-position: center;
             border-radius: 15px;
             margin-bottom: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.4s ease-in-out;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease-in-out;
         }
 
         .image-box:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
-        /* Botón con efecto neón */
+        /* Botón con efecto azul */
         .btn {
-            background-color: transparent;
-            color: #00c6ff;
-            padding: 15px 45px;
+            background: linear-gradient(45deg, #1e90ff, #00bfff);
+            color: #fff;
+            padding: 15px 60px;
             font-size: 1em;
             font-weight: 600;
-            border: 2px solid #00c6ff;
+            border: none;
             border-radius: 50px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: 0.4s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: all 0.6s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.6);
         }
 
         .btn:hover {
-            background-color: #00c6ff;
-            color: #fff;
-            box-shadow: 0 0 20px #00c6ff, 0 0 30px #0072ff;
+            transform: scale(1.08);
+            box-shadow: 0 0 20px #1e90ff, 0 0 30px #00bfff;
         }
 
         /* Firma */
@@ -132,7 +115,7 @@
 
         .footer span {
             font-weight: bold;
-            color: #00c6ff;
+            color: #1e90ff;
         }
     </style>
 </head>
@@ -140,7 +123,7 @@
 <body>
 
     <div class="container">
-        <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
+        <h1>Banco del Tesoro, C.A.</h1>
         <h2>3er Seminario en Materia de Riesgo</h2>
 
         <!-- Imagen con efecto hover -->
@@ -148,9 +131,9 @@
             <div class="image-box"></div>
         </a>
 
-        <!-- Botón con efecto neón -->
+        <!-- Botón con efecto azul -->
         <a href="./assets/Curso.pptx" download>
-            <button class="btn">📥 Descargar Curso</button>
+            <button class="btn">?? Descargar Curso</button>
         </a>
 
         <!-- Firma -->
