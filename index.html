@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Elegante con Animación</title>
+    <title>Página Elegante y Colorida</title>
     <style>
         /* Diseño general */
         body {
@@ -12,7 +12,7 @@
             padding: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             overflow-x: hidden;
-            background: #f4f7fc;
+            background: #F7F9FB;
         }
 
         /* Efecto de parallax */
@@ -27,6 +27,8 @@
             color: #fff;
             text-align: center;
             position: relative;
+            background: linear-gradient(to right, #0435bb, #3498DB);
+            /* Gradiente colorido */
         }
 
         /* Fondo oscuro con efecto de transparencia */
@@ -34,7 +36,7 @@
             background-color: rgba(0, 0, 0, 0.6);
             padding: 30px;
             border-radius: 15px;
-            max-width: 500px;
+            max-width: 600px;
             width: 100%;
             animation: fadeIn 1.5s ease-out;
         }
@@ -52,36 +54,25 @@
             }
         }
 
-        h1,
-        h2,
-        h3 {
+        h1 {
             margin: 10px 0;
-            font-size: 2.2em;
+            font-size: 1.4em;
+            /* Reducción del tamaño del texto */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: #f7f7f7;
             animation: slideIn 1s ease-out;
         }
 
-        /* Animación de los títulos */
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         h2 {
-            font-size: 1.6em;
+            font-size: 1.3em;
+            margin: 8px 0;
+            color: #fdfdfd;
         }
 
         h3 {
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 400;
             color: #BDC3C7;
         }
@@ -97,6 +88,7 @@
             border-radius: 10px;
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .image-box:hover {
@@ -106,21 +98,97 @@
 
         /* Botón interactivo */
         .btn {
-            padding: 12px 24px;
-            background-color: #2980B9;
+            padding: 12px 30px;
+            background-color: #0435bb;
+            /* Botón color naranja brillante */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 30px;
+            text-transform: uppercase;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #D35400;
+            /* Efecto al pasar el mouse */
+            transform: translateY(-3px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo para el formulario */
+        .form-container {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideInForm 0.5s ease-out;
+        }
+
+        /* Animación del formulario */
+        @keyframes slideInForm {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            background-color: #F2F3F4;
+        }
+
+        .form-container button {
+            background-color: #27ae60;
+            padding: 12px;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.1em;
-            margin-top: 30px;
-            text-transform: uppercase;
-            transition: background-color 0.3s, transform 0.3s ease;
+            width: 100%;
         }
 
-        .btn:hover {
-            background-color: #1C5D7D;
-            transform: translateY(-3px);
+        .form-container button:hover {
+            background-color: #2ecc71;
+        }
+
+        .form-container label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Firma al final de la página */
+        .footer {
+            text-align: center;
+            font-size: 1.2em;
+            color: #F39C12;
+            /* Color vibrante */
+            margin-top: 40px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .footer p {
+            margin: 0;
+            padding: 10px;
         }
     </style>
 </head>
@@ -133,14 +201,41 @@
             <h3>GGAIR/GRO</h3>
 
             <!-- Cuadro con imagen dentro del contenedor -->
-            <div class="image-box"></div>
+            <div class="image-box" onclick="mostrarFormulario()"></div>
 
             <!-- Botón para descargar -->
-            <a href="path_to_your_file.pptx" download>
+            <a href="./assets/Curso.pptx" download>
                 <button class="btn">Abrir</button>
             </a>
         </div>
     </div>
+
+    <!-- Formulario que se muestra al hacer clic en la imagen o botón -->
+    <div class="form-container" id="formulario">
+        <h2>Introduce tus datos</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" placeholder="Ingresa tu cédula" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Firma de autor -->
+    <div class="footer">
+        <p>Elaborado por Zadquiel Molina</p>
+    </div>
+
+    <script>
+        // Función para mostrar el formulario
+        function mostrarFormulario() {
+            const formulario = document.getElementById('formulario');
+            formulario.style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
