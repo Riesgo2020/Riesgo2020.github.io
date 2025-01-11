@@ -55,7 +55,7 @@
 
         /* Título principal */
         h1 {
-            font-size: 2.8em;
+            font-size: 1.4em;
             font-weight: 700;
             margin-bottom: 15px;
             background: linear-gradient(90deg, #1e90ff, #00bfff);
@@ -64,27 +64,31 @@
         }
 
         h2 {
-            font-size: 1.3em;
+            font-size: 1.8em;
             font-weight: 400;
             margin-bottom: 25px;
             color: #dcdde1;
         }
 
-        /* Imagen ajustada al contenedor */
-        .image-box {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
+.image-box {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            /* Ajusta la imagen sin recortes */
-        }
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
         /* Botón con icono */
         .btn {
@@ -131,7 +135,7 @@
 <body>
 
     <div class="container">
-        <h1>Banco del Tesoro, C.A.</h1>
+        <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
         <h2>3er Seminario en Materia de Riesgo</h2>
 
         <!-- Imagen ajustada con etiqueta img -->
@@ -152,6 +156,8 @@
         </div>
     </div>
 
+
+    
 </body>
 
 </html>
