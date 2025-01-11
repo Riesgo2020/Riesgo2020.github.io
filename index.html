@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3er Seminario - Banco del Tesoro</title>
+    <!-- Agregar Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Fuente moderna */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -68,27 +70,25 @@
             color: #dcdde1;
         }
 
-        /* Imagen con efecto hover */
+        /* Imagen ajustada al contenedor */
         .image-box {
             width: 100%;
             height: 320px;
-            background-image: url('https://riesgo2020.github.io/assets/Portada.jpg');
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
             border-radius: 15px;
             margin-bottom: 20px;
-            overflow: hidden;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-            transition: transform 0.5s ease-in-out;
         }
 
-        .image-box:hover {
-            transform: scale(1.1);
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Ajusta la imagen sin recortes */
         }
 
-        /* Botón con efecto azul */
+        /* Botón con icono */
         .btn {
-            background: linear-gradient(45deg, #1e90ff, #00bfff);
+            background: linear-gradient(45deg, #00bfff, #1e90ff);
             color: #fff;
             padding: 15px 60px;
             font-size: 1em;
@@ -98,12 +98,20 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.6);
+            box-shadow: 0 5px 15px rgba(90, 142, 161, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn i {
+            margin-right: 10px;
+            /* Espacio entre el icono y el texto */
         }
 
         .btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 20px #1e90ff, 0 0 30px #00bfff;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(90, 142, 161, 0.6), 0 0 25px rgba(112, 169, 209, 0.6);
         }
 
         /* Firma */
@@ -126,14 +134,16 @@
         <h1>Banco del Tesoro, C.A.</h1>
         <h2>3er Seminario en Materia de Riesgo</h2>
 
-        <!-- Imagen con efecto hover -->
+        <!-- Imagen ajustada con etiqueta img -->
         <a href="./assets/Curso.pptx" download>
-            <div class="image-box"></div>
+            <div class="image-box">
+                <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen del seminario">
+            </div>
         </a>
 
-        <!-- Botón con efecto azul -->
+        <!-- Botón con icono -->
         <a href="./assets/Curso.pptx" download>
-            <button class="btn">?? Descargar Curso</button>
+            <button class="btn"><i class="fas fa-download"></i> Descargar Curso</button>
         </a>
 
         <!-- Firma -->
