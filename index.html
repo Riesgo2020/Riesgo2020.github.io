@@ -1,215 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco del Tesoro, C.A. Banco Universal</title>
+    <title>Página Elegante con Animación</title>
     <style>
-        /* Estilos generales */
+        /* Diseño general */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            line-height: 1.6; /* Interlineado */
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
+            background: #f4f7fc;
         }
 
-        /* Contenedor principal con el color de fondo */
-        .content {
-            background-color: #4A90E2;
-            color: white;
+        /* Efecto de parallax */
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
             text-align: center;
-            padding: 40px 0 20px 0; /* Añadir padding-top para el espacio que deseas */
+            position: relative;
         }
 
-        h4 {
-            margin: 0;
-            font-size: 1.2em; /* Tamaño más pequeño */
-            margin-bottom: 10px; /* Separación adicional */
-            animation: fadeInUp 1s ease-out;
+        /* Fondo oscuro con efecto de transparencia */
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 1.5s ease-out;
         }
 
-        h2 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: bold; /* Negrita */
-            margin-bottom: 10px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* División del título en dos líneas */
-        h2 span {
-            display: block;
-        }
-
-        h3 {
-            margin: 0;
-            font-size: 1.6em; /* Tamaño más fino */
-            font-weight: normal;
-            margin-top: 10px;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* Estilo dinámico para las letras */
-        @keyframes fadeInUp {
-            from {
+        /* Animación para el fade-in de la caja */
+        @keyframes fadeIn {
+            0% {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(50px);
             }
-            to {
+
+            100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Efecto de ola */
-        svg {
+        h1,
+        h2,
+        h3 {
+            margin: 10px 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Animación de los títulos */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.6em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            font-weight: 400;
+            color: #BDC3C7;
+        }
+
+        /* Cuadro con imagen dentro del contenedor */
+        .image-box {
             width: 100%;
-            display: block;
-            position: relative;
-            top: -20px;
-            z-index: 0; /* Colocar ola atrás */
-        }
-
-        /* Cuadro dinámico */
-        .dynamic-box {
-            margin: -60px auto 10px auto; /* Subir el cuadro más arriba */
-            padding: 20px;
-            max-width: 250px; /* Cuadro más pequeño */
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-            z-index: 1; /* Colocar cuadro al frente */
-        }
-
-        .dynamic-box:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .dynamic-box img {
-            width: 100%;
+            height: 250px;
+            background-image: url('https://riesgo2020.github.io/assets/Portada.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 20px auto;
             border-radius: 10px;
-            margin-top: 20px;
-            cursor: pointer;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Estilo del botón */
-        .download-button {
-            display: inline-block;
-            padding: 20px 40px;
-            margin-top: 10px; /* Ajustar la distancia */
-            background-color: #4A90E2;
+        .image-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Botón interactivo */
+        .btn {
+            padding: 12px 24px;
+            background-color: #2980B9;
             color: white;
-            font-size: 1.5em;
-            border-radius: 25px;
-            text-decoration: none;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            z-index: 1; /* Colocar botón al frente */
+            font-size: 1.1em;
+            margin-top: 30px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.3s ease;
         }
 
-        .download-button:hover {
-            background-color: #218838;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        .btn:hover {
+            background-color: #1C5D7D;
             transform: translateY(-3px);
         }
-
-        /* Estilos del mensaje de agradecimiento */
-        .thank-you-message {
-            display: none;
-            margin-top: 30px;
-            padding: 25px;
-            background-color: #28a745;
-            color: white;
-            font-size: 1.2em;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeInScale 0.5s ease-in-out;
-        }
-
-        .thank-you-message.show {
-            display: block;
-        }
-
-        /* Animación de entrada */
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Estilos responsivos */
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 2em;
-            }
-            .download-button {
-                font-size: 1.2em;
-                padding: 15px 30px;
-            }
-            .dynamic-box {
-                padding: 15px;
-                width: 90%;
-            }
-        }
-
     </style>
 </head>
+
 <body>
+    <div class="parallax">
+        <div class="container">
+            <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
+            <h2>3er Seminario en Materia de Riesgo</h2>
+            <h3>GGAIR/GRO</h3>
 
-    <!-- Contenido principal con los encabezados -->
-    <div class="content">
-        <h4>Banco del Tesoro, C.A. Banco Universal</h4>
-        <h2><span>3er Seminario en</span> <span>Materia de Riesgo</span></h2>
-        <h3>GGAIR / GRO</h3>
+            <!-- Cuadro con imagen dentro del contenedor -->
+            <div class="image-box"></div>
+
+            <!-- Botón para descargar -->
+            <a href="path_to_your_file.pptx" download>
+                <button class="btn">Abrir</button>
+            </a>
+        </div>
     </div>
-
-    <!-- Efecto de ola -->
-    <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#4A90E2" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,122.7C384,149,480,235,576,250.7C672,267,768,213,864,202.7C960,192,1056,224,1152,245.3C1248,267,1344,277,1392,282.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-    </svg>
-
-    <!-- Cuadro dinámico -->
-    <div class="dynamic-box">
-        <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen representativa de la información" onclick="downloadFile()">
-    </div>
-
-    <!-- Botón de descarga -->
-    <div style="text-align: center; margin-bottom: 30px;">
-        <a class="download-button" onclick="downloadFile()">Abrir</a>
-    </div>
-
-    <!-- Mensaje de agradecimiento -->
-    <div class="thank-you-message" id="thank-you-message">
-        ¡Gracias por participar!
-    </div>
-
-    <script>
-        // Función para descargar el archivo PPTX
-        function downloadFile() {
-            const link = document.createElement('a');
-            link.href = './assets/Curso.pptx'; // Ruta del archivo en tu repositorio
-            link.download = 'Curso.pptx';
-            link.click();
-            showThankYouMessage();
-        }
-
-        // Función para mostrar el mensaje de agradecimiento
-        function showThankYouMessage() {
-            const message = document.getElementById('thank-you-message');
-            message.classList.add('show');
-        }
-    </script>
 </body>
+
 </html>
