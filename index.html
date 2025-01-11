@@ -4,238 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Elegante y Colorida</title>
+    <title>3er Seminario - Banco del Tesoro</title>
     <style>
-        /* Diseño general */
-        body {
+        /* Fuente moderna */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            overflow-x: hidden;
-            background: #F7F9FB;
+            box-sizing: border-box;
         }
 
-        /* Efecto de parallax */
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f2027;
+            background-image: linear-gradient(315deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(to right, #0435bb, #3498DB);
-            /* Gradiente colorido */
         }
 
-        /* Fondo oscuro con efecto de transparencia */
+        /* Contenedor principal */
         .container {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 600px;
-            width: 100%;
-            animation: fadeIn 1.5s ease-out;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 90%;
+            max-width: 700px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
-        /* Animación para el fade-in de la caja */
-        @keyframes fadeIn {
-            0% {
+        @keyframes fadeInUp {
+            from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(20px);
             }
 
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+        /* Título principal */
         h1 {
-            margin: 10px 0;
-            font-size: 1.4em;
-            /* Reducción del tamaño del texto */
+            font-size: 1.1em;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #f7f7f7;
-            animation: slideIn 1s ease-out;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h2 {
             font-size: 1.3em;
-            margin: 8px 0;
-            color: #fdfdfd;
-        }
-
-        h3 {
-            font-size: 1.1em;
             font-weight: 400;
-            color: #BDC3C7;
+            margin-bottom: 25px;
+            color: #dcdde1;
         }
 
-        /* Cuadro con imagen dentro del contenedor */
+        /* Imagen con efecto hover */
         .image-box {
             width: 100%;
-            height: 250px;
+            height: 300px;
             background-image: url('https://riesgo2020.github.io/assets/Portada.jpg');
             background-size: cover;
             background-position: center;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease-in-out;
         }
 
         .image-box:hover {
             transform: scale(1.05);
-            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);
         }
 
-        /* Botón interactivo */
+        /* Botón con efecto neón */
         .btn {
-            padding: 12px 30px;
-            background-color: #0435bb;
-            /* Botón color naranja brillante */
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.2em;
-            margin-top: 30px;
+            background-color: transparent;
+            color: #00c6ff;
+            padding: 15px 45px;
+            font-size: 1em;
+            font-weight: 600;
+            border: 2px solid #00c6ff;
+            border-radius: 50px;
             text-transform: uppercase;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: all 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
-            background-color: #D35400;
-            /* Efecto al pasar el mouse */
-            transform: translateY(-3px);
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Estilo para el formulario */
-        .form-container {
-            display: none;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #00c6ff;
             color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 400px;
-            margin: 20px auto;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-            animation: slideInForm 0.5s ease-out;
+            box-shadow: 0 0 20px #00c6ff, 0 0 30px #0072ff;
         }
 
-        /* Animación del formulario */
-        @keyframes slideInForm {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .form-container input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-            background-color: #F2F3F4;
-        }
-
-        .form-container button {
-            background-color: #27ae60;
-            padding: 12px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.1em;
-            width: 100%;
-        }
-
-        .form-container button:hover {
-            background-color: #2ecc71;
-        }
-
-        .form-container label {
-            font-size: 1.1em;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        /* Firma al final de la página */
+        /* Firma */
         .footer {
-            text-align: center;
-            font-size: 1.2em;
-            color: #F39C12;
-            /* Color vibrante */
-            margin-top: 40px;
-            animation: fadeIn 2s ease-out;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #a4b0be;
         }
 
-        .footer p {
-            margin: 0;
-            padding: 10px;
+        .footer span {
+            font-weight: bold;
+            color: #00c6ff;
         }
     </style>
 </head>
 
 <body>
-    <div class="parallax">
-        <div class="container">
-            <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
-            <h2>3er Seminario en Materia de Riesgo</h2>
-            <h3>GGAIR/GRO</h3>
 
-            <!-- Cuadro con imagen dentro del contenedor -->
-            <div class="image-box" onclick="mostrarFormulario()"></div>
+    <div class="container">
+        <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
+        <h2>3er Seminario en Materia de Riesgo</h2>
 
-            <!-- Botón para descargar -->
-            <a href="./assets/Curso.pptx" download>
-                <button class="btn">Abrir</button>
-            </a>
+        <!-- Imagen con efecto hover -->
+        <a href="./assets/Curso.pptx" download>
+            <div class="image-box"></div>
+        </a>
+
+        <!-- Botón con efecto neón -->
+        <a href="./assets/Curso.pptx" download>
+            <button class="btn">📥 Descargar Curso</button>
+        </a>
+
+        <!-- Firma -->
+        <div class="footer">
+            <p>Elaborado por <span>Zadquiel Molina</span></p>
         </div>
     </div>
 
-    <!-- Formulario que se muestra al hacer clic en la imagen o botón -->
-    <div class="form-container" id="formulario">
-        <h2>Introduce tus datos</h2>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
-
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" name="cedula" placeholder="Ingresa tu cédula" required>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-
-    <!-- Firma de autor -->
-    <div class="footer">
-        <p>Elaborado por Zadquiel Molina</p>
-    </div>
-
-    <script>
-        // Función para mostrar el formulario
-        function mostrarFormulario() {
-            const formulario = document.getElementById('formulario');
-            formulario.style.display = 'block';
-        }
-    </script>
 </body>
 
 </html>
