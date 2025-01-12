@@ -59,18 +59,12 @@
             -webkit-text-fill-color: transparent;
         }
 
-        h2 {
+        h2,
+        h3 {
             font-size: 1.8em;
             font-weight: 400;
             margin-bottom: 10px;
             color: #dcdde1;
-        }
-
-        h3 {
-            font-size: 1.2em;
-            font-weight: 400;
-            margin-bottom: 25px;
-            color: #a4b0be;
         }
 
         .image-box {
@@ -114,15 +108,40 @@
             box-shadow: 0 0 20px rgba(90, 142, 161, 0.6), 0 0 25px rgba(112, 169, 209, 0.6);
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .modal-content i {
+            font-size: 3em;
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+
         .footer {
             margin-top: 20px;
             font-size: 0.9em;
             color: #a4b0be;
-        }
-
-        .footer span {
-            font-weight: bold;
-            color: #1e90ff;
         }
     </style>
 </head>
@@ -137,13 +156,32 @@
             <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen del seminario">
         </div>
 
-        <button class="btn" onclick="window.location.href='./assets/Curso.pptx'"><i class="fas fa-download"></i>
-            Descargar Curso</button>
+        <button class="btn" onclick="showThankYou()"><i class="fas fa-download"></i> Descargar Curso</button>
+
+        <div id="thankYouModal" class="modal">
+            <div class="modal-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>¡Gracias por descargar!</h2>
+                <p>Esperamos que disfrutes del contenido del seminario.</p>
+                <button class="btn" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
 
         <div class="footer">
             <p>Elaborado por <span>Zadquiel Molina</span></p>
         </div>
     </div>
+
+    <script>
+        function showThankYou() {
+            document.getElementById('thankYouModal').style.display = 'flex';
+            window.location.href = './assets/Curso.pptx';
+        }
+
+        function closeModal() {
+            document.getElementById('thankYouModal').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
