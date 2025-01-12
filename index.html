@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3er Seminario - Banco del Tesoro</title>
-    <!-- Agregar Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Fuente moderna */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
         * {
@@ -28,7 +26,6 @@
             color: #fff;
         }
 
-        /* Contenedor principal */
         .container {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 50px;
@@ -53,7 +50,6 @@
             }
         }
 
-        /* Título principal */
         h1 {
             font-size: 1.4em;
             font-weight: 700;
@@ -66,31 +62,37 @@
         h2 {
             font-size: 1.8em;
             font-weight: 400;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
             color: #dcdde1;
         }
 
-.image-box {
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-    overflow: hidden;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    position: relative;
-}
+        h3 {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #a4b0be;
+        }
 
-.image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+        .image-box {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
 
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
-        /* Botón con icono */
         .btn {
             background: linear-gradient(45deg, #00bfff, #1e90ff);
             color: #fff;
@@ -99,7 +101,6 @@
             font-weight: 600;
             border: none;
             border-radius: 50px;
-            text-transform: uppercase;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 5px 15px rgba(90, 142, 161, 0.4);
@@ -108,17 +109,11 @@
             justify-content: center;
         }
 
-        .btn i {
-            margin-right: 10px;
-            /* Espacio entre el icono y el texto */
-        }
-
         .btn:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(90, 142, 161, 0.6), 0 0 25px rgba(112, 169, 209, 0.6);
         }
 
-        /* Firma */
         .footer {
             margin-top: 20px;
             font-size: 0.9em;
@@ -133,31 +128,22 @@
 </head>
 
 <body>
-
     <div class="container">
         <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
         <h2>3er Seminario en Materia de Riesgo</h2>
+        <h3>GGAIR/GRO</h3>
 
-        <!-- Imagen ajustada con etiqueta img -->
-        <a href="./assets/Curso.pptx" download>
-            <div class="image-box">
-                <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen del seminario">
-            </div>
-        </a>
+        <div class="image-box">
+            <img src="https://riesgo2020.github.io/assets/Portada.jpg" alt="Imagen del seminario">
+        </div>
 
-        <!-- Botón con icono -->
-        <a href="./assets/Curso.pptx" download>
-            <button class="btn"><i class="fas fa-download"></i> Descargar Curso</button>
-        </a>
+        <button class="btn" onclick="window.location.href='./assets/Curso.pptx'"><i class="fas fa-download"></i>
+            Descargar Curso</button>
 
-        <!-- Firma -->
         <div class="footer">
             <p>Elaborado por <span>Zadquiel Molina</span></p>
         </div>
     </div>
-
-
-    
 </body>
 
 </html>
