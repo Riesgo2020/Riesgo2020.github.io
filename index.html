@@ -185,10 +185,15 @@
     </div>
 
     <script>
-        function showThankYou() {
-            document.getElementById('thankYouModal').style.display = 'flex';
+        
+    function showThankYou() {
+        document.getElementById('thankYouModal').style.display = 'flex';
+        setTimeout(function () {
             window.location.href = './assets/Curso.pptx';
-        }
+            closeModal();
+        }, 4000); // espera 2 segundos antes de redirigir
+    }
+
 
         function closeModal() {
             document.getElementById('thankYouModal').style.display = 'none';
