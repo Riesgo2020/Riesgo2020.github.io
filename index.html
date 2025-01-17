@@ -144,7 +144,6 @@
             margin-bottom: 10px;
         }
 
-
         .footer {
             margin-top: 20px;
             font-size: 0.9em;
@@ -185,19 +184,29 @@
     </div>
 
     <script>
-        
-    function showThankYou() {
-        document.getElementById('thankYouModal').style.display = 'flex';
-        setTimeout(function () {
-            window.location.href = './assets/Curso.pdf';
-            closeModal();
-        }, 4000); // espera 2 segundos antes de redirigir
-    }
-
+        function showThankYou() {
+            document.getElementById('thankYouModal').style.display = 'flex';
+            setTimeout(function () {
+                window.location.href = './assets/Curso.pdf';
+                closeModal();
+            }, 4000); // espera 4 segundos antes de redirigir
+        }
 
         function closeModal() {
             document.getElementById('thankYouModal').style.display = 'none';
         }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFW5Y6985Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WFW5Y6985Y');
     </script>
 </body>
 
