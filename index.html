@@ -75,6 +75,28 @@
             min-height: 44px;
         }
 
+        /* Logo T personalizado */
+        .logo-t {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            color: #1e90ff;
+            background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(30, 144, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.2);
+            margin: 0 auto 1.5rem;
+        }
+
         /* Contenedor principal */
         .main-container {
             max-width: 1200px;
@@ -106,17 +128,12 @@
         }
 
         .bank-logo {
-            display: inline-flex;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
-        }
-
-        .bank-logo i {
-            font-size: 2.5rem;
-            color: #1e90ff;
-            filter: drop-shadow(0 0 10px rgba(30, 144, 255, 0.5));
         }
 
         .bank-logo h1 {
@@ -127,6 +144,7 @@
             background-clip: text;
             font-weight: 700;
             letter-spacing: 0.5px;
+            text-align: center;
         }
 
         .executive-header h2 {
@@ -144,43 +162,10 @@
             line-height: 1.6;
         }
 
-        /* Sección de contenido principal */
+        /* Sección de contenido principal - SIN IMAGEN */
         .content-hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 4rem;
-            align-items: start;
-        }
-
-        @media (max-width: 992px) {
-            .content-hero {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .image-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
             display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.03);
+            margin-bottom: 4rem;
         }
 
         .welcome-message {
@@ -190,6 +175,7 @@
             padding: 2.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
         .welcome-message h3 {
@@ -198,6 +184,7 @@
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 1rem;
         }
 
@@ -211,6 +198,7 @@
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
             line-height: 1.7;
+            text-align: left;
         }
 
         .welcome-message .highlight {
@@ -588,6 +576,12 @@
                 padding: 1.5rem 1rem;
             }
             
+            .logo-t {
+                font-size: 2.5rem;
+                width: 70px;
+                height: 70px;
+            }
+            
             .bank-logo h1 {
                 font-size: 1.8rem;
             }
@@ -627,9 +621,10 @@
                 padding: 1rem;
             }
             
-            .bank-logo {
-                flex-direction: column;
-                gap: 0.5rem;
+            .logo-t {
+                font-size: 2.2rem;
+                width: 60px;
+                height: 60px;
             }
             
             .bank-logo h1 {
@@ -659,29 +654,18 @@
 
 <body>
     <div class="main-container">
-        <!-- Header ejecutivo -->
+        <!-- Header ejecutivo con LOGO T -->
         <header class="executive-header">
             <div class="bank-logo">
-                <i class="fas fa-university"></i>
+                <div class="logo-t">T</div>
                 <h1>Banco del Tesoro, C.A. Banco Universal</h1>
             </div>
             <h2>Portal de Capacitación Ejecutiva</h2>
             <p class="subtitle">Material exclusivo para altos ejecutivos - 4to Seminario en gestión de riesgos, continuidad del negocio y seguridad tecnológica</p>
         </header>
 
-        <!-- Contenido principal -->
+        <!-- Contenido principal SIN IMAGEN -->
         <div class="content-hero">
-            <div class="image-container">
-                <picture>
-                    <source srcset="https://riesgo2020.github.io/assets/Portada.jpg" type="image/jpeg">
-                    <img src="https://riesgo2020.github.io/assets/Portada.jpg" 
-                         alt="4to Seminario en Materia de Riesgo - Banco del Tesoro"
-                         loading="eager"
-                         width="800"
-                         height="450">
-                </picture>
-            </div>
-            
             <div class="welcome-message">
                 <h3><i class="fas fa-graduation-cap"></i> Bienvenido al 4to Seminario</h3>
                 <p>Estimado ejecutivo, este portal contiene los <span class="highlight">materiales más actualizados</span> de nuestro <strong>4to Seminario en Materia de Riesgo</strong>.</p>
@@ -736,7 +720,7 @@
                     <h4>Capacitación en Riesgo Tecnológico y Seguridad de la Información</h4>
                     <p>Una presentación integral sobre los principales riesgos tecnológicos y mejores prácticas de seguridad para la banca. Incluye casos de estudio y estrategias de mitigación.</p>
                     <div class="resource-meta">
-                        <span><i class="far fa-clock"></i> 45 min aprox.</span>
+                        <span><i class="far fa-clock"></i> 10-15 min aprox.</span>
                         <span><i class="fas fa-external-link-alt"></i> Presentación interactiva</span>
                     </div>
                     <a href="https://prezi.com/view/rO5iECyu7rfhelUD60Pr/?referral_token=s3qIGSlnB3FN" 
@@ -755,7 +739,7 @@
                     <h4>Riesgo de Continuidad del Negocio (RCB) en Banca</h4>
                     <p>Análisis exhaustivo y estrategias para garantizar la continuidad operacional del banco ante posibles interrupciones. Cubre planes de recuperación y marcos regulatorios.</p>
                     <div class="resource-meta">
-                        <span><i class="far fa-clock"></i> 60 min aprox.</span>
+                        <span><i class="far fa-clock"></i> 10-15 min aprox.</span>
                         <span><i class="fas fa-external-link-alt"></i> Presentación interactiva</span>
                     </div>
                     <a href="https://prezi.com/view/qM6fKPVCkpgD41hZzsur/?referral_token=PhuUXclnB3FN" 
@@ -851,10 +835,6 @@
         }
         
         document.addEventListener('DOMContentLoaded', function() {
-            // Preload de imagen
-            const preloadImage = new Image();
-            preloadImage.src = 'https://riesgo2020.github.io/assets/Portada.jpg';
-            
             // Detectar conexión
             updateConnectionStatus();
             window.addEventListener('online', updateConnectionStatus);
