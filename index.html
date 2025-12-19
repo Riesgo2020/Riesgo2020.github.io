@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>4to Seminario - Banco del Tesoro</title>
+    <title>Portal de Capacitación - Banco del Tesoro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <!-- Meta tags mejorados -->
-    <meta name="description" content="3er Seminario en Materia de Riesgo del Banco del Tesoro, C.A. Banco Universal">
+    <meta name="description" content="Portal de capacitación ejecutiva del Banco del Tesoro - 4to Seminario en gestión de riesgos, continuidad del negocio y seguridad tecnológica">
     <meta name="theme-color" content="#0e1a2b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,7 +29,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -54,177 +54,389 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #0e1a2b;
-            background-image: linear-gradient(120deg, #0e1a2b 0%, #1e3c72 50%, #2a5298 100%);
+            background-image: linear-gradient(135deg, #0e1a2b 0%, #1a2c4d 30%, #2a5298 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             color: #fff;
+            line-height: 1.6;
             padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-            line-height: 1.5;
             position: relative;
         }
 
         input, textarea, button, select {
-            font-size: 16px; /* Previene zoom automático en iOS */
+            font-size: 16px;
         }
 
-        /* Detección de dispositivo via CSS */
+        /* Detección de dispositivo */
         body.mobile-device .container {
             -webkit-overflow-scrolling: touch;
         }
 
         body.ios-device .btn {
-            padding: 18px 40px;
-            min-height: 44px; /* Tamaño mínimo táctil de Apple */
+            min-height: 44px;
         }
 
-        body.android-device .btn:active {
-            background: linear-gradient(45deg, #0099cc, #0077cc);
-            transform: scale(0.95) !important;
-        }
-
-        .container {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            width: 100%;
-            max-width: 750px;
-            animation: fadeInUp 1s ease-in-out;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 1rem;
-            transform: translateZ(0);
-            backface-visibility: hidden;
+        /* Contenedor principal */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
             position: relative;
             z-index: 1;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            background: linear-gradient(90deg, #1e90ff, #00bfff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.3;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            color: #dcdde1;
-            line-height: 1.3;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            color: #dcdde1af;
-        }
-
-        .image-box {
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 1.8rem;
+        /* Header ejecutivo */
+        .executive-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(30, 144, 255, 0.2);
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            background-color: #fff;
         }
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .executive-header::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e90ff, #00bfff);
+            border-radius: 2px;
         }
 
-        .btn {
-            background: linear-gradient(45deg, #00bfff, #1e90ff);
-            color: #fff;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(90, 142, 161, 0.4);
+        .bank-logo {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            max-width: 300px;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bank-logo i {
+            font-size: 2.5rem;
+            color: #1e90ff;
+            filter: drop-shadow(0 0 10px rgba(30, 144, 255, 0.5));
+        }
+
+        .bank-logo h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #fff 0%, #a0d2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .executive-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .executive-header .subtitle {
+            font-size: 1.1rem;
+            color: #a4b0be;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Sección de contenido principal */
+        .content-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .content-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .image-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .welcome-message {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-message h3 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .welcome-message h3 i {
+            color: #00bfff;
+            font-size: 1.4rem;
+        }
+
+        .welcome-message p {
+            color: #dcdde1;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .welcome-message .highlight {
+            color: #1e90ff;
+            font-weight: 600;
+        }
+
+        /* Secciones de recursos */
+        .resources-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-header i {
+            font-size: 1.8rem;
+            color: #00bfff;
+        }
+
+        .section-header h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .section-description {
+            color: #a4b0be;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            max-width: 800px;
+        }
+
+        /* Grid de recursos */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tarjetas de recursos */
+        .resource-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e90ff, #00bfff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(30, 144, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .resource-card.highlight {
+            border: 2px solid rgba(0, 191, 255, 0.4);
+            background: linear-gradient(145deg, rgba(30, 144, 255, 0.15), rgba(0, 191, 255, 0.05));
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            color: #1e90ff;
+            margin-bottom: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(30, 144, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .resource-card h4 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .resource-card p {
+            color: #dcdde1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+            flex-grow: 1;
+        }
+
+        .resource-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+
+        .resource-meta i {
+            color: #00bfff;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
             position: relative;
             overflow: hidden;
             min-height: 50px;
         }
 
-        .btn:hover:not(:disabled) {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(90, 142, 161, 0.6), 0 0 25px rgba(112, 169, 209, 0.6);
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
         }
 
-        .btn:active:not(:disabled) {
-            transform: scale(0.98);
+        .btn:hover::after {
+            left: 100%;
         }
 
-        .btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none !important;
+        .btn-primary {
+            background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+            color: white;
+            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.4);
         }
 
-        .btn-spinner {
-            display: none;
-            animation: spin 1s linear infinite;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.6);
         }
 
-        .btn.downloading .btn-text {
-            display: none;
+        .btn-secondary {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn.downloading .btn-spinner {
-            display: inline-block;
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #353b40 0%, #7f8c8d 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        /* Barra de progreso */
+        .btn-tertiary {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-tertiary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+            color: white;
+            box-shadow: 0 5px 20px rgba(30, 144, 255, 0.4);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Progreso de descarga */
         .download-progress {
             width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 2px;
-            margin: 15px 0;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin: 1.5rem 0 1rem;
             overflow: hidden;
             display: none;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .download-progress-bar {
@@ -232,7 +444,11 @@
             background: linear-gradient(90deg, #00bfff, #1e90ff);
             width: 0%;
             transition: width 0.3s ease;
-            border-radius: 2px;
+            border-radius: 3px;
+        }
+
+        .downloading .download-progress-bar {
+            animation: progressAnimation 3s ease-in-out forwards;
         }
 
         @keyframes progressAnimation {
@@ -240,15 +456,7 @@
             100% { width: 100%; }
         }
 
-        .downloading .download-progress-bar {
-            animation: progressAnimation 3s ease-in-out forwards;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -256,7 +464,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -271,255 +479,170 @@
         }
 
         .modal-content {
-            background-color: #fff;
-            color: #333;
-            padding: 2rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #1a2c4d 0%, #0e1a2b 100%);
+            color: #fff;
+            padding: 3rem;
+            border-radius: 25px;
             text-align: center;
             width: 100%;
-            max-width: 400px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            max-width: 500px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(30, 144, 255, 0.3);
             animation: modalSlideIn 0.4s ease;
             position: relative;
-            margin: 1rem;
         }
 
         @keyframes modalSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-30px) scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
         .modal-content i {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #1e90ff;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .modal-content h2 {
-            color: #1e3c72;
+        .modal-content h4 {
+            color: #fff;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
         .modal-content p {
-            margin-bottom: 1.5rem;
-            color: #555;
+            margin-bottom: 2rem;
+            color: #dcdde1;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
-        .footer {
-            margin-top: 1.8rem;
-            font-size: 0.9rem;
-            color: #a4b0be;
-            padding-top: 1rem;
+        /* Footer ejecutivo */
+        .executive-footer {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
-        .footer span {
-            font-weight: bold;
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-info i {
             color: #1e90ff;
+            font-size: 1.5rem;
         }
 
-        /* Loader */
-        .loader {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #1e90ff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 1rem auto;
-            display: none;
+        .author-info p {
+            color: #a4b0be;
+            font-size: 1rem;
         }
 
-        /* Offline message */
-        .offline-message {
-            display: none;
-            background: rgba(255, 0, 0, 0.1);
-            border: 1px solid rgba(255, 0, 0, 0.3);
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 15px;
+        .author-info .author-name {
+            color: #1e90ff;
+            font-weight: 600;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a4b0be;
             font-size: 0.9rem;
         }
 
-        /* Mejoras para dispositivos táctiles */
-        @media (hover: none) and (pointer: coarse) {
-            .btn {
-                transition: transform 0.1s, background 0.1s;
-            }
-            
-            .btn:active:not(:disabled) {
-                transform: scale(0.95);
-                opacity: 0.9;
-            }
-            
-            /* Mejorar área táctil */
-            .btn::after {
-                content: '';
-                position: absolute;
-                top: -10px;
-                left: -10px;
-                right: -10px;
-                bottom: -10px;
-            }
+        .connection-status.online {
+            color: #27ae60;
         }
 
-        /* ========== MEDIA QUERIES RESPONSIVE ========== */
+        .connection-status.offline {
+            color: #e74c3c;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
-                align-items: flex-start;
-                padding-top: max(2rem, env(safe-area-inset-top));
+            .main-container {
+                padding: 1.5rem 1rem;
             }
             
-            .container {
-                padding: 2rem;
-                border-radius: 15px;
+            .bank-logo h1 {
+                font-size: 1.8rem;
             }
             
-            h1 {
-                font-size: 1.4rem;
-                margin-bottom: 0.7rem;
+            .executive-header h2 {
+                font-size: 1.5rem;
             }
             
-            h2 {
-                font-size: 1.2rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            h3 {
-                font-size: 1.1rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .image-box {
-                margin-bottom: 1.5rem;
-                border-radius: 12px;
-            }
-            
-            .btn {
-                padding: 0.9rem 2rem;
+            .executive-header .subtitle {
                 font-size: 1rem;
-                max-width: 280px;
+            }
+            
+            .welcome-message {
+                padding: 2rem;
+            }
+            
+            .welcome-message h3 {
+                font-size: 1.4rem;
+            }
+            
+            .resource-card {
+                padding: 1.8rem;
+            }
+            
+            .resources-grid {
+                gap: 1.5rem;
             }
             
             .modal-content {
-                padding: 1.8rem;
+                padding: 2rem;
                 max-width: 90%;
             }
         }
 
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-                padding-top: max(1.5rem, env(safe-area-inset-top));
+            .main-container {
+                padding: 1rem;
             }
             
-            .container {
-                padding: 1.5rem;
-                border-radius: 12px;
+            .bank-logo {
+                flex-direction: column;
+                gap: 0.5rem;
             }
             
-            h1 {
-                font-size: 1.3rem;
-                margin-bottom: 0.6rem;
-            }
-            
-            h2 {
-                font-size: 1.1rem;
-                margin-bottom: 0.4rem;
-            }
-            
-            h3 {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .btn {
-                padding: 0.85rem 1.8rem;
-                font-size: 0.95rem;
-                max-width: 260px;
-            }
-            
-            .modal-content {
-                padding: 1.5rem;
-            }
-            
-            .modal-content i {
-                font-size: 3rem;
-            }
-            
-            .footer {
-                margin-top: 1.5rem;
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .container {
-                padding: 1.2rem;
-            }
-            
-            h1 {
-                font-size: 1.2rem;
-            }
-            
-            h2 {
-                font-size: 1rem;
-            }
-            
-            h3 {
-                font-size: 0.95rem;
-            }
-            
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-                max-width: 240px;
-            }
-            
-            .modal-content {
-                padding: 1.2rem;
-            }
-            
-            .modal-content i {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Tablets horizontal */
-        @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-            .container {
-                max-width: 85%;
-            }
-            
-            body {
-                padding: 10px;
-            }
-        }
-
-        /* Pantallas grandes */
-        @media (min-width: 1200px) {
-            .container {
-                padding: 3rem;
-                max-width: 800px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
+            .bank-logo h1 {
                 font-size: 1.6rem;
             }
             
-            h3 {
-                font-size: 1.3rem;
+            .resource-card {
+                padding: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
             }
         }
 
@@ -531,96 +654,188 @@
                 transition-duration: 0.01ms !important;
             }
         }
-
-        /* Modo oscuro del sistema */
-        @media (prefers-color-scheme: dark) {
-            .modal-content {
-                background-color: #1a1a2e;
-                color: #e6e6e6;
-            }
-            
-            .modal-content h2 {
-                color: #4da6ff;
-            }
-            
-            .modal-content p {
-                color: #cccccc;
-            }
-        }
-
-        /* High contrast mode */
-        @media (prefers-contrast: high) {
-            .btn {
-                border: 2px solid white;
-            }
-            
-            .container {
-                border: 2px solid rgba(255, 255, 255, 0.3);
-            }
-        }
     </style>
 </head>
 
 <body>
-    <!-- Detección de conexión -->
-    <div class="offline-message" id="offlineMessage">
-        <i class="fas fa-wifi-slash"></i> Estás en modo offline. Algunas funciones pueden no estar disponibles.
-    </div>
+    <div class="main-container">
+        <!-- Header ejecutivo -->
+        <header class="executive-header">
+            <div class="bank-logo">
+                <i class="fas fa-university"></i>
+                <h1>Banco del Tesoro, C.A. Banco Universal</h1>
+            </div>
+            <h2>Portal de Capacitación Ejecutiva</h2>
+            <p class="subtitle">Material exclusivo para altos ejecutivos - 4to Seminario en gestión de riesgos, continuidad del negocio y seguridad tecnológica</p>
+        </header>
 
-    <div class="container">
-        <h1>Banco del Tesoro, C.A. Banco Universal.</h1>
-        <h2>4to Seminario en Materia de Riesgo</h2>
-        <h3>GGAIR/GRO</h3>
-
-        <div class="image-box">
-            <picture>
-                <!-- Imágenes optimizadas por tamaño -->
-                <source media="(max-width: 480px)" 
-                        srcset="https://riesgo2020.github.io/assets/Portada.jpg">
-                <source media="(max-width: 768px)" 
-                        srcset="https://riesgo2020.github.io/assets/Portada.jpg">
-                <img src="https://riesgo2020.github.io/assets/Portada.jpg" 
-                     alt="Portada del 3er Seminario en Materia de Riesgo del Banco del Tesoro"
-                     loading="lazy"
-                     width="750"
-                     height="422"
-                     onerror="this.src='https://via.placeholder.com/750x422/1e3c72/ffffff?text=Portada+Seminario'">
-            </picture>
+        <!-- Contenido principal -->
+        <div class="content-hero">
+            <div class="image-container">
+                <picture>
+                    <source srcset="https://riesgo2020.github.io/assets/Portada.jpg" type="image/jpeg">
+                    <img src="https://riesgo2020.github.io/assets/Portada.jpg" 
+                         alt="4to Seminario en Materia de Riesgo - Banco del Tesoro"
+                         loading="eager"
+                         width="800"
+                         height="450">
+                </picture>
+            </div>
+            
+            <div class="welcome-message">
+                <h3><i class="fas fa-graduation-cap"></i> Bienvenido al 4to Seminario</h3>
+                <p>Estimado ejecutivo, este portal contiene los <span class="highlight">materiales más actualizados</span> de nuestro <strong>4to Seminario en Materia de Riesgo</strong>.</p>
+                <p>Hemos diseñado esta plataforma para facilitar su acceso a todos los recursos de formación desde cualquier dispositivo, garantizando una experiencia óptima tanto en computadoras como en teléfonos móviles.</p>
+                <p>Explore las diferentes secciones para acceder a presentaciones interactivas, el documento principal del seminario y la evaluación del curso.</p>
+            </div>
         </div>
 
-        <button class="btn" id="downloadBtn" aria-label="Descargar seminario en formato PDF">
-            <span class="btn-text">
-                <i class="fas fa-download"></i> Descargar Curso
-            </span>
-            <i class="fas fa-spinner fa-spin btn-spinner"></i>
-        </button>
-        
-        <div class="download-progress" id="downloadProgress">
-            <div class="download-progress-bar"></div>
-        </div>
+        <!-- SECCIÓN 1: Documento Principal del 4to Seminario -->
+        <section class="resources-section">
+            <div class="section-header">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Documento Principal - 4to Seminario</h3>
+            </div>
+            <p class="section-description">Acceda al documento completo del 4to Seminario en Materia de Riesgo. Incluye todos los materiales presentados, análisis y referencias técnicas.</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card highlight">
+                    <div class="card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4>4to Seminario en Materia de Riesgo - Documento Completo</h4>
+                    <p>Documento PDF oficial del 4to Seminario. Contiene todo el contenido presentado, análisis de casos, metodologías y mejores prácticas en gestión de riesgos para la banca.</p>
+                    <div class="resource-meta">
+                        <span><i class="far fa-file-pdf"></i> Documento PDF Actualizado</span>
+                        <span><i class="fas fa-download"></i> Descarga directa</span>
+                    </div>
+                    <button class="btn btn-download" id="downloadBtn">
+                        <i class="fas fa-download"></i> Descargar 4to Seminario (PDF)
+                    </button>
+                    <div class="download-progress" id="downloadProgress">
+                        <div class="download-progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- SECCIÓN 2: Presentaciones Complementarias -->
+        <section class="resources-section">
+            <div class="section-header">
+                <i class="fas fa-video"></i>
+                <h3>Presentaciones Complementarias</h3>
+            </div>
+            <p class="section-description">Material adicional en formato interactivo para profundizar en temas específicos del 4to Seminario.</p>
+            
+            <div class="resources-grid">
+                <!-- Prezi Riesgo Tecnológico -->
+                <div class="resource-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Capacitación en Riesgo Tecnológico y Seguridad de la Información</h4>
+                    <p>Una presentación integral sobre los principales riesgos tecnológicos y mejores prácticas de seguridad para la banca. Incluye casos de estudio y estrategias de mitigación.</p>
+                    <div class="resource-meta">
+                        <span><i class="far fa-clock"></i> 45 min aprox.</span>
+                        <span><i class="fas fa-external-link-alt"></i> Presentación interactiva</span>
+                    </div>
+                    <a href="https://prezi.com/view/rO5iECyu7rfhelUD60Pr/?referral_token=s3qIGSlnB3FN" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Ver Presentación en Prezi
+                    </a>
+                </div>
+                
+                <!-- Prezi RCB -->
+                <div class="resource-card">
+                    <div class="card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h4>Riesgo de Continuidad del Negocio (RCB) en Banca</h4>
+                    <p>Análisis exhaustivo y estrategias para garantizar la continuidad operacional del banco ante posibles interrupciones. Cubre planes de recuperación y marcos regulatorios.</p>
+                    <div class="resource-meta">
+                        <span><i class="far fa-clock"></i> 60 min aprox.</span>
+                        <span><i class="fas fa-external-link-alt"></i> Presentación interactiva</span>
+                    </div>
+                    <a href="https://prezi.com/view/qM6fKPVCkpgD41hZzsur/?referral_token=PhuUXclnB3FN" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Ver Presentación en Prezi
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Evaluación -->
+        <section class="resources-section">
+            <div class="section-header">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Evaluación del 4to Seminario</h3>
+            </div>
+            <p class="section-description">Su feedback es esencial para mejorar la calidad de nuestras capacitaciones futuras.</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h4>Cuestionario de Evaluación del 4to Seminario</h4>
+                    <p>Por favor, dedique unos minutos a completar este formulario para evaluar el contenido, la presentación y la utilidad práctica del 4to Seminario. Sus comentarios son valiosos.</p>
+                    <div class="resource-meta">
+                        <span><i class="far fa-clock"></i> 5-7 min aprox.</span>
+                        <span><i class="fab fa-google"></i> Google Forms</span>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScrY7T4TzUGFH9o_FMCBqU_StjXtYYBvgzhBaWRIqqsVayn0g/viewform?usp=publish-editor" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn btn-tertiary">
+                        <i class="fas fa-edit"></i> Completar Evaluación
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de descarga -->
         <div id="thankYouModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
             <div class="modal-content">
                 <i class="fas fa-check-circle"></i>
-                <h2 id="modalTitle">¡Gracias por descargar!</h2>
-                <p id="modalDesc">Esperamos que disfrutes del contenido del seminario. La descarga comenzará automáticamente.</p>
-                <div class="loader" id="modalLoader"></div>
+                <h4 id="modalTitle">¡Descarga del 4to Seminario Iniciada!</h4>
+                <p id="modalDesc">Gracias por descargar el material. El archivo PDF del <strong>4to Seminario en Materia de Riesgo</strong> se descargará automáticamente a su dispositivo.</p>
                 <div class="download-progress" id="modalProgress">
                     <div class="download-progress-bar"></div>
                 </div>
-                <button class="btn" onclick="closeModal()" aria-label="Cerrar mensaje de confirmación">
+                <button class="btn btn-primary" onclick="closeModal()" style="margin-top: 1.5rem;">
                     <i class="fas fa-times"></i> Cerrar
                 </button>
             </div>
         </div>
 
-        <div class="footer">
-            <p>Elaborado por <span>Zadquiel Molina</span></p>
-            <p id="connectionStatus" style="font-size: 0.8rem; margin-top: 5px;"></p>
-        </div>
+        <!-- Footer ejecutivo -->
+        <footer class="executive-footer">
+            <div class="footer-content">
+                <div class="author-info">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Portal desarrollado por <span class="author-name">Zadquiel Molina</span> para la Gerencia de Riesgos Operacionales - 4to Seminario en Materia de Riesgo</p>
+                </div>
+                <div class="connection-status" id="connectionStatus">
+                    <i class="fas fa-wifi"></i>
+                    <span>Conexión estable</span>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script>
+        // Variables globales
+        let downloadInProgress = false;
+        const downloadBtn = document.getElementById('downloadBtn');
+        const modal = document.getElementById('thankYouModal');
+        const downloadProgress = document.getElementById('downloadProgress');
+        const modalProgress = document.getElementById('modalProgress');
+        const connectionStatus = document.getElementById('connectionStatus');
+        
         // Detección de dispositivo
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         const isAndroid = /Android/.test(navigator.userAgent);
@@ -632,23 +847,8 @@
             document.body.classList.add('mobile-device');
             if (isIOS) {
                 document.body.classList.add('ios-device');
-                console.log('Dispositivo iOS detectado');
-            }
-            if (isAndroid) {
-                document.body.classList.add('android-device');
-                console.log('Dispositivo Android detectado');
             }
         }
-        
-        // Variables globales
-        let downloadInProgress = false;
-        const downloadBtn = document.getElementById('downloadBtn');
-        const modal = document.getElementById('thankYouModal');
-        const downloadProgress = document.getElementById('downloadProgress');
-        const modalProgress = document.getElementById('modalProgress');
-        const modalLoader = document.getElementById('modalLoader');
-        const offlineMessage = document.getElementById('offlineMessage');
-        const connectionStatus = document.getElementById('connectionStatus');
         
         document.addEventListener('DOMContentLoaded', function() {
             // Preload de imagen
@@ -661,7 +861,9 @@
             window.addEventListener('offline', updateConnectionStatus);
             
             // Manejo de descarga
-            downloadBtn.addEventListener('click', handleDownload);
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', handleDownload);
+            }
             
             // Cerrar modal con tecla ESC
             document.addEventListener('keydown', function(e) {
@@ -680,35 +882,29 @@
             // Touch improvements
             document.addEventListener('touchstart', function() {}, {passive: true});
             
-            // Cache del PDF si está disponible
-            if ('caches' in window && navigator.onLine) {
-                setTimeout(() => {
-                    caches.open('seminario-cache-v1').then(cache => {
-                        cache.add('./assets/Curso.pdf').catch(() => {
-                            console.log('Cache no disponible');
-                        });
-                    });
-                }, 3000);
-            }
-            
-            // Service Worker para PWA básico
-            if ('serviceWorker' in navigator && location.protocol === 'https:') {
-                navigator.serviceWorker.register('/sw.js').catch(() => {
-                    console.log('Service Worker no registrado');
+            // Analytics (si lo mantienes)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: '4to Seminario Riesgo - Banco Tesoro',
+                    page_location: window.location.href
                 });
             }
         });
         
         function updateConnectionStatus() {
             const isOnline = navigator.onLine;
-            if (isOnline) {
-                offlineMessage.style.display = 'none';
-                connectionStatus.textContent = '✓ En línea';
-                connectionStatus.style.color = '#4CAF50';
-            } else {
-                offlineMessage.style.display = 'block';
-                connectionStatus.textContent = '✗ Offline';
-                connectionStatus.style.color = '#f44336';
+            const statusElement = document.getElementById('connectionStatus');
+            
+            if (statusElement) {
+                if (isOnline) {
+                    statusElement.innerHTML = '<i class="fas fa-wifi"></i><span>Conexión estable</span>';
+                    statusElement.classList.add('online');
+                    statusElement.classList.remove('offline');
+                } else {
+                    statusElement.innerHTML = '<i class="fas fa-wifi-slash"></i><span>Modo offline</span>';
+                    statusElement.classList.add('offline');
+                    statusElement.classList.remove('online');
+                }
             }
         }
         
@@ -716,27 +912,19 @@
             if (downloadInProgress) return;
             
             downloadInProgress = true;
-            const btn = downloadBtn;
             const progressBar = downloadProgress.querySelector('.download-progress-bar');
             const modalProgressBar = modalProgress.querySelector('.download-progress-bar');
             
-            // Deshabilitar botón y mostrar estado
-            btn.disabled = true;
-            btn.classList.add('downloading');
+            // Deshabilitar botón y mostrar progreso
+            downloadBtn.disabled = true;
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Descargando...';
             downloadProgress.style.display = 'block';
             progressBar.style.width = '0%';
             
             // Mostrar modal
             modal.style.display = 'flex';
-            modalLoader.style.display = 'block';
             modalProgress.style.display = 'block';
             modalProgressBar.style.width = '0%';
-            
-            // Trackear inicio de descarga
-            trackEvent('download_start', {
-                device_type: isMobile ? 'mobile' : 'desktop',
-                platform: isIOS ? 'ios' : isAndroid ? 'android' : 'web'
-            });
             
             try {
                 // Iniciar animación de progreso
@@ -747,16 +935,13 @@
                 
                 // Estrategia de descarga según navegador
                 if (isIOS || isSafari) {
-                    // Para Safari/iOS, abrir en nueva pestaña
-                    console.log('iOS/Safari detectado - usando estrategia especial');
+                    // Para Safari/iOS
                     setTimeout(() => {
                         const link = document.createElement('a');
                         link.href = './assets/Curso.pdf';
                         link.target = '_blank';
                         link.rel = 'noopener noreferrer';
                         link.click();
-                        
-                        trackEvent('download_success', { method: 'new_tab' });
                         
                         // Cerrar modal después de 3 segundos
                         setTimeout(() => {
@@ -765,17 +950,14 @@
                         }, 3000);
                     }, 1500);
                 } else {
-                    // Para otros navegadores, descarga directa
+                    // Para otros navegadores
                     const link = document.createElement('a');
                     link.href = './assets/Curso.pdf';
-                    link.download = '3er_Seminario_Riesgo_Banco_Tesoro.pdf';
+                    link.download = '4to_Seminario_Riesgo_Banco_Tesoro.pdf';
                     
-                    // Intentar descarga forzada
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-                    
-                    trackEvent('download_success', { method: 'direct_download' });
                     
                     // Cerrar modal más rápido
                     setTimeout(() => {
@@ -787,16 +969,14 @@
             } catch (error) {
                 console.error('Error en descarga:', error);
                 
-                // Fallback: redirección simple
-                trackEvent('download_error', { error: error.message });
-                
+                // Fallback
                 setTimeout(() => {
                     window.location.href = './assets/Curso.pdf';
                     resetButton();
                 }, 1000);
                 
             } finally {
-                // Rehabilitar botón después de 5 segundos como seguridad
+                // Rehabilitar botón después de 5 segundos
                 setTimeout(() => {
                     if (downloadInProgress) {
                         resetButton();
@@ -808,7 +988,7 @@
         function resetButton() {
             downloadInProgress = false;
             downloadBtn.disabled = false;
-            downloadBtn.classList.remove('downloading');
+            downloadBtn.innerHTML = '<i class="fas fa-download"></i> Descargar 4to Seminario (PDF)';
             downloadProgress.style.display = 'none';
             
             const progressBar = downloadProgress.querySelector('.download-progress-bar');
@@ -822,7 +1002,6 @@
         
         function closeModal() {
             modal.style.display = 'none';
-            modalLoader.style.display = 'none';
             modalProgress.style.display = 'none';
             
             const modalProgressBar = modalProgress.querySelector('.download-progress-bar');
@@ -832,87 +1011,6 @@
             setTimeout(() => {
                 modalProgressBar.style.animation = '';
             }, 10);
-        }
-        
-        function trackEvent(eventName, params = {}) {
-            // Google Analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('event', eventName, {
-                    ...params,
-                    event_category: 'engagement',
-                    event_label: 'seminario_riesgo'
-                });
-            }
-            
-            // Console log para debugging
-            console.log(`Evento: ${eventName}`, params);
-        }
-        
-        // Google Analytics mejorado
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        
-        gtag('config', 'G-WFW5Y6985Y', {
-            'page_title': '3er Seminario Banco Tesoro - Riesgo',
-            'page_location': window.location.href,
-            'custom_map': {
-                'dimension1': 'device_type',
-                'dimension2': 'platform',
-                'dimension3': 'connection_status'
-            },
-            'device_type': isMobile ? 'mobile' : 'desktop',
-            'platform': isIOS ? 'ios' : isAndroid ? 'android' : 'web',
-            'connection_status': navigator.onLine ? 'online' : 'offline'
-        });
-        
-        // Trackear vista de página
-        trackEvent('page_view', {
-            page_path: window.location.pathname,
-            screen_resolution: `${window.innerWidth}x${window.innerHeight}`
-        });
-    </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFW5Y6985Y"></script>
-    
-    <!-- Service Worker básico (inline para simplicidad) -->
-    <script id="sw-script">
-        // Crear Service Worker dinámicamente si no existe
-        if ('serviceWorker' in navigator) {
-            const swContent = `
-                self.addEventListener('install', (event) => {
-                    event.waitUntil(
-                        caches.open('seminario-cache-v1').then((cache) => {
-                            return cache.addAll([
-                                './',
-                                './assets/Curso.pdf',
-                                'https://riesgo2020.github.io/assets/Portada.jpg'
-                            ]);
-                        })
-                    );
-                });
-                
-                self.addEventListener('fetch', (event) => {
-                    event.respondWith(
-                        caches.match(event.request).then((response) => {
-                            return response || fetch(event.request);
-                        })
-                    );
-                });
-            `;
-            
-            // Solo registrar si estamos en HTTPS
-            if (location.protocol === 'https:') {
-                const blob = new Blob([swContent], {type: 'application/javascript'});
-                const swURL = URL.createObjectURL(blob);
-                
-                navigator.serviceWorker.register(swURL)
-                    .then(() => console.log('Service Worker registrado'))
-                    .catch(err => console.log('SW error:', err));
-            }
         }
     </script>
 </body>
